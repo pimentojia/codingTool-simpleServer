@@ -4,6 +4,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,5 +35,17 @@ public class HelloController extends BaseController {
         return "test, " + param + "! ";
     }
 
+    /**
+     * 获取时间组件时间
+     * @return String
+     */
+    @GetMapping(path = "getTime")
+    public String getTime() {
+        long time = new Date().getTime();
+        Map<String, Object> res = new HashMap<>();
+        res.put("status", "success");
+        res.put("time", String.valueOf(time) + "000000");
+        return buildSuccessMessage(ResultModal.SUCCESS_MSG, res);
+    }
 
 }

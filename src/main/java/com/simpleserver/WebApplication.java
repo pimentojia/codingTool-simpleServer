@@ -1,4 +1,4 @@
-package com.simpleserver.web;
+package com.simpleserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
